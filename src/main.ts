@@ -8,6 +8,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://vite.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
       <p>some change</p
+      <p>some change</p
+      <p>some change</p
+      <p>some change</p
+      <p>some fix</p
     </a>
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
