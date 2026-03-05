@@ -1,5 +1,5 @@
-name-template: 'v$BRANCH_NAME'
-tag-template: 'v$BRANCH_NAME'
+name-template: '$BRANCH_NAME'
+tag-template: '$BRANCH_NAME'
 
 categories:
   - title: '🚀 Features'
