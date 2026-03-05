@@ -29,17 +29,17 @@ version-resolver:
   default: patch
 
 autolabeler:
-  - label: 'fix'
+  - label: fix
     title:
-      - '/fix:/i'
+      - '/\bfix\b/i'
+
+  - label: task
+    title:
+      - '/\btask\b/i'
 
   - label: 'feat'
     title:
-      - '/feat:/i'
-
-  - label: 'task'
-    title:
-      - '/task:/i'
+       - '/\feat\b/i'
 
 template: |
   ## Changes
