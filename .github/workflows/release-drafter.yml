@@ -3,23 +3,18 @@ name: Release Drafter
 on:
   push:
     branches:
-      - "release/*"
+      - 'release/*'
 
 jobs:
   update_release_draft:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
 
     steps:
-      - name: Extract version
-        id: version
-        run: |
-          VERSION=${GITHUB_REF#refs/heads/release/}
-          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-
-      - name: Update release draft
-        uses: release-drafter/release-drafter@v6
+      - uses: release-drafter/release-drafter@v6
         with:
-          name: ${{ steps.version.outputs.VERSION }}
-          tag: ${{ steps.version.outputs.VERSION }}
+          config-name: release-drafter.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
