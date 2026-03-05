@@ -1,20 +1,34 @@
-name-template: '$BRANCH_NAME'
-tag-template: '$BRANCH_NAME'
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
 
 categories:
-  - title: '🚀 Features'
+  - title: "🚀 Features"
     labels:
-      - 'feat'
-      - 'task'
-      - 'chore'
-  - title: '🐛 Bug Fixes'
-    labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
+      - feat
+      - task
+      - chore
 
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+  - title: "🐛 Bug Fixes"
+    labels:
+      - fix
+      - bugfix
+      - bug
+
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 change-title-escapes: '\<*_&'
+
+autolabeler:
+  - label: fix
+    title:
+      - '/\bfix\b/i'
+
+  - label: task
+    title:
+      - '/\btask\b/i'
+
+  - label: feat
+    title:
+      - '/\bfeat\b/i'
 
 version-resolver:
   major:
@@ -27,19 +41,6 @@ version-resolver:
     labels:
       - 'patch'
   default: patch
-
-autolabeler:
-  - label: fix
-    title:
-      - '/\bfix\b/i'
-
-  - label: task
-    title:
-      - '/\btask\b/i'
-
-  - label: 'feat'
-    title:
-       - '/\feat\b/i'
 
 template: |
   ## Changes
