@@ -2,33 +2,44 @@ name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 
 categories:
-  - title: "🚀 Features"
+  - title: '🚀 Features'
     labels:
-      - feat
-      - task
-      - chore
-
-  - title: "🐛 Bug Fixes"
+      - 'feat'
+      - 'task'
+      - 'chore'
+  - title: '🐛 Bug Fixes'
     labels:
-      - fix
-      - bugfix
-      - bug
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
 
-change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+
 autolabeler:
-  - label: fix
+  - label: 'fix'
     title:
-      - '/\bfix\b/i'
+      - '/fix:/i'
 
-  - label: task
+  - label: 'feat'
     title:
-      - '/\btask\b/i'
+      - '/feat:/i'
 
-  - label: feat
+  - label: 'task'
     title:
-      - '/\bfeat\b/i'
+      - '/task:/i'
 
 version-resolver:
   major:
