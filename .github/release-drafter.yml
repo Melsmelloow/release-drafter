@@ -1,5 +1,5 @@
-name-template: 'v$RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
+name-template: 'v$BRANCH_NAME'
+tag-template: 'v$BRANCH_NAME'
 
 categories:
   - title: '🚀 Features'
